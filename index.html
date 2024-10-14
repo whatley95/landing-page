@@ -7,17 +7,106 @@
     <meta http-equiv="refresh" content="5;url=https://2ly.link/20H2e">
     <title>Redirecting...</title>
 
+    <!-- Style for software developer themed design -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #282c34;
+            color: #61dafb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #1c1f26;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+            color: #61dafb;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #61dafb;
+            /* Developer-themed color */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #21a1f1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .spinner {
+            margin: 20px auto;
+            /* This ensures the spinner is centered horizontally */
+            width: 50px;
+            height: 50px;
+            border: 5px solid #333;
+            border-radius: 50%;
+            border-top: 5px solid #61dafb;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .code-snippet {
+            background-color: #2b2e3b;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #ffffff;
+            margin-top: 20px;
+            line-height: 1.6;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+
+    <!-- JavaScript to handle redirection -->
     <script type="text/javascript">
-        // Optional JavaScript redirect as a backup
         setTimeout(function () {
-            window.location.href = "https://2ly.link/20H2e";
+            window.location.href = 'https://2ly.link/20H2e';
         }, 5000);
     </script>
 </head>
 
 <body>
-    <p>You are being redirected to <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>. If you are not redirected
-        within 5 seconds, click the link.</p>
+    <div class="container">
+        <h1>Redirecting to Your Destination...</h1>
+        <p>You will be redirected to <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a> in 5 seconds.</p>
+        <p>If you are not redirected, click the link above.</p>
+        <div class="spinner"></div>
+    </div>
 </body>
 
-</html> 
+</html>
