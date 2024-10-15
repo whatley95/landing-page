@@ -7,7 +7,7 @@
     <meta http-equiv="refresh" content="5;url=https://2ly.link/20H2e">
     <title>Redirecting...</title>
 
-    <!-- Style for software developer themed design -->
+    <!-- Style for a modern software developer themed design -->
     <style>
         * {
             box-sizing: border-box;
@@ -17,31 +17,52 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            background-color: #282c34;
+            background: linear-gradient(135deg, #282c34, #0d1117);
             color: #61dafb;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
-            padding: 20px; /* Added padding for smaller screens */
+            padding: 20px;
+            animation: backgroundFade 5s infinite alternate;
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                background: linear-gradient(135deg, #282c34, #0d1117);
+            }
+            100% {
+                background: linear-gradient(135deg, #0d1117, #21252b);
+            }
         }
 
         .container {
             background-color: #1c1f26;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             max-width: 600px;
             width: 100%;
             color: #61dafb;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 20px;
             color: #61dafb;
-            /* Developer-themed color */
         }
 
         p {
@@ -54,7 +75,7 @@
             color: #21a1f1;
             text-decoration: none;
             font-weight: bold;
-            word-break: break-all; /* Ensures long URLs break to the next line */
+            word-break: break-all;
         }
 
         a:hover {
@@ -63,9 +84,8 @@
 
         .spinner {
             margin: 20px auto;
-            /* This ensures the spinner is centered horizontally */
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border: 5px solid #333;
             border-radius: 50%;
             border-top: 5px solid #61dafb;
@@ -82,10 +102,14 @@
             }
         }
 
-        /* Media query for mobile screens */
+        /* Add hover effect to the container */
+        .container:hover {
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+        }
+
         @media (max-width: 600px) {
             h1 {
-                font-size: 22px;
+                font-size: 24px;
             }
 
             p {
@@ -97,13 +121,13 @@
             }
 
             .spinner {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
                 border-width: 4px;
             }
 
             a {
-                word-wrap: break-word; /* Breaks long URLs to fit smaller screens */
+                word-wrap: break-word;
             }
         }
     </style>
