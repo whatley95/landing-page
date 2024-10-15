@@ -46,6 +46,7 @@
             width: 100%;
             color: #61dafb;
             animation: slideUp 1s ease-out;
+            position: relative;
         }
 
         @keyframes slideUp {
@@ -63,6 +64,7 @@
             font-size: 32px;
             margin-bottom: 20px;
             color: #61dafb;
+            font-family: 'Roboto', sans-serif;
         }
 
         p {
@@ -76,10 +78,11 @@
             text-decoration: none;
             font-weight: bold;
             word-break: break-all;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #84dbff;
         }
 
         .spinner {
@@ -102,9 +105,44 @@
             }
         }
 
+        /* Progress bar */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #61dafb;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
         /* Add hover effect to the container */
         .container:hover {
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Manual redirect button */
+        .redirect-btn {
+            background-color: #21a1f1;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .redirect-btn:hover {
+            background-color: #1a87d9;
         }
 
         @media (max-width: 600px) {
@@ -136,7 +174,12 @@
     <script type="text/javascript">
         setTimeout(function () {
             window.location.href = 'https://2ly.link/20H2e';
-        }, 3000);
+        }, 5000);
+
+        // Optional: manual redirect
+        function manualRedirect() {
+            window.location.href = 'https://2ly.link/20H2e';
+        }
     </script>
 </head>
 
@@ -148,8 +191,14 @@
             <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>
         </p>
         <p>in 3 seconds.</p>
-        <p>If you are not redirected, click the link above.</p>
+        <p>If you are not redirected, click the link above or use the button below.</p>
         <div class="spinner"></div>
+        
+        <!-- Progress bar -->
+        <div class="progress-bar"></div>
+
+        <!-- Manual Redirect Button -->
+        <button class="redirect-btn" onclick="manualRedirect()">Redirect Now</button>
     </div>
 </body>
 
