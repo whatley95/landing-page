@@ -25,8 +25,30 @@
             text-align: center;
             padding: 20px;
             overflow: hidden;
-            background-image: url('background-pattern.png'); /* Optional: Add a subtle background pattern */
+            position: relative;
+        }
+
+        .background-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('developer-icon.png'); /* Replace with your developer-themed icon */
             background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.1; /* Set the opacity for a faded effect */
+            z-index: 0;
+            animation: fadeIn 3s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.1; /* Final opacity for background */
+            }
         }
 
         .container {
@@ -37,17 +59,8 @@
             max-width: 500px;
             width: 100%;
             animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            position: relative;
+            z-index: 1; /* Bring the container above the background icon */
         }
 
         h1 {
@@ -129,6 +142,7 @@
 </head>
 
 <body>
+    <div class="background-icon"></div> <!-- Background icon -->
     <div class="container">
         <h1>Redirecting...</h1>
         <p>You will be redirected to:</p>
