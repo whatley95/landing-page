@@ -24,6 +24,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            padding: 20px; /* Added padding for smaller screens */
         }
 
         .container {
@@ -32,7 +33,7 @@
             padding: 40px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 600px;
-            width: 90%;
+            width: 100%;
             color: #61dafb;
         }
 
@@ -53,6 +54,7 @@
             color: #21a1f1;
             text-decoration: none;
             font-weight: bold;
+            word-break: break-all; /* Ensures long URLs break to the next line */
         }
 
         a:hover {
@@ -99,6 +101,10 @@
                 height: 40px;
                 border-width: 4px;
             }
+
+            a {
+                word-wrap: break-word; /* Breaks long URLs to fit smaller screens */
+            }
         }
     </style>
 
@@ -113,9 +119,11 @@
 <body>
     <div class="container">
         <h1>Redirecting to Your Destination...</h1>
-        <p>You will be redirected to 
-            <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a> 
-            in 3 seconds.</p>
+        <p>You will be redirected to:</p>
+        <p>
+            <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>
+        </p>
+        <p>in 3 seconds.</p>
         <p>If you are not redirected, click the link above.</p>
         <div class="spinner"></div>
     </div>
