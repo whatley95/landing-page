@@ -16,74 +16,62 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
-            color: #e0e0e0;
+            background-color: #f9f9f9; /* Light background color */
+            color: #333; /* Dark text color for contrast */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
             padding: 20px;
-            overflow: hidden;
             position: relative;
-        }
-
-        .background-icon {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('developer-icon.png'); /* Replace with your developer-themed icon */
-            background-size: cover;
-            background-repeat: no-repeat;
-            opacity: 0.1; /* Set the opacity for a faded effect */
-            z-index: 0;
-            animation: fadeIn 3s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0.1; /* Final opacity for background */
-            }
+            overflow: hidden;
         }
 
         .container {
-            background-color: rgba(30, 30, 30, 0.9);
-            border-radius: 15px;
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
             animation: fadeIn 1s ease-in-out;
             position: relative;
-            z-index: 1; /* Bring the container above the background icon */
+            z-index: 1; /* Bring the container above the background */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 20px;
-            color: #ffcc00;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            color: #007BFF; /* Blue header color */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         p {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 15px;
-            line-height: 1.5;
-            color: #b3b3b3;
+            line-height: 1.6;
+            color: #555; /* Softer text color */
         }
 
         .spinner {
             margin: 20px auto;
-            width: 50px;
-            height: 50px;
-            border: 6px solid rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            border-top: 6px solid #ffcc00;
+            border-top: 6px solid #007BFF; /* Spinner color */
             animation: spin 1s linear infinite;
         }
 
@@ -97,8 +85,8 @@
         }
 
         .redirect-btn {
-            background-color: #ffcc00;
-            color: #1a1a1a;
+            background-color: #007BFF; /* Button color */
+            color: #ffffff; /* White text color */
             padding: 12px 24px;
             border: none;
             border-radius: 5px;
@@ -109,23 +97,32 @@
         }
 
         .redirect-btn:hover {
-            background-color: #e6b800;
+            background-color: #0056b3; /* Darker shade on hover */
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 24px;
-            }
+        /* Floating circle animation */
+        .floating-circle {
+            position: absolute;
+            background-color: rgba(0, 123, 255, 0.1); /* Light blue floating circles */
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
 
-            p {
-                font-size: 14px;
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
             }
-
-            .spinner {
-                width: 40px;
-                height: 40px;
+            50% {
+                transform: translateY(-30px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
     </style>
@@ -142,7 +139,6 @@
 </head>
 
 <body>
-    <div class="background-icon"></div> <!-- Background icon -->
     <div class="container">
         <h1>Redirecting...</h1>
         <p>You will be redirected to:</p>
@@ -153,6 +149,11 @@
         <div class="spinner" role="status" aria-live="polite" aria-label="Loading..."></div>
         <button class="redirect-btn" onclick="manualRedirect()">Redirect Now</button>
     </div>
+    
+    <!-- Floating circles for background effect -->
+    <div class="floating-circle" style="width: 100px; height: 100px; top: 20%; left: 20%;"></div>
+    <div class="floating-circle" style="width: 80px; height: 80px; top: 60%; left: 70%; animation-duration: 8s;"></div>
+    <div class="floating-circle" style="width: 120px; height: 120px; top: 80%; left: 10%; animation-duration: 7s;"></div>
 </body>
 
 </html>
