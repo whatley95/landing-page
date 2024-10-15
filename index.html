@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="5;url=https://2ly.link/20H2e">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add your favicon -->
     <title>Redirecting...</title>
 
-    <!-- Style for a modern software developer themed design -->
     <style>
         * {
             box-sizing: border-box;
@@ -25,23 +25,27 @@
             height: 100vh;
             text-align: center;
             padding: 20px;
-            animation: backgroundFade 5s infinite alternate;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
         }
 
-        @keyframes backgroundFade {
+        @keyframes backgroundAnimation {
             0% {
                 background: linear-gradient(135deg, #282c34, #0d1117);
             }
-            100% {
+            50% {
                 background: linear-gradient(135deg, #0d1117, #21252b);
+            }
+            100% {
+                background: linear-gradient(135deg, #21252b, #0d1117);
             }
         }
 
         main {
-            background-color: #1c1f26;
+            background-color: rgba(28, 31, 38, 0.9);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
             max-width: 600px;
             width: 100%;
             color: #61dafb;
@@ -61,10 +65,16 @@
         }
 
         h1 {
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 20px;
             color: #61dafb;
             font-family: 'Roboto', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
         }
 
         p {
@@ -77,8 +87,8 @@
             color: #21a1f1;
             text-decoration: none;
             font-weight: bold;
-            word-break: break-all;
             transition: color 0.3s ease;
+            word-break: break-all;
         }
 
         a:hover {
@@ -89,9 +99,9 @@
             margin: 20px auto;
             width: 60px;
             height: 60px;
-            border: 5px solid #333;
+            border: 8px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            border-top: 5px solid #61dafb;
+            border-top: 8px solid #61dafb;
             animation: spin 1s linear infinite;
         }
 
@@ -99,13 +109,11 @@
             0% {
                 transform: rotate(0deg);
             }
-
             100% {
                 transform: rotate(360deg);
             }
         }
 
-        /* Progress bar */
         .progress-bar {
             position: absolute;
             bottom: 0;
@@ -124,12 +132,11 @@
             }
         }
 
-        /* Add hover effect to the container */
         main:hover {
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(1.02);
         }
 
-        /* Manual redirect button */
         .redirect-btn {
             background-color: #21a1f1;
             color: #fff;
@@ -138,11 +145,12 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .redirect-btn:hover {
             background-color: #1a87d9;
+            transform: scale(1.05);
         }
 
         .redirect-btn:disabled {
@@ -152,7 +160,7 @@
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
 
             p {
@@ -166,22 +174,27 @@
             .spinner {
                 width: 50px;
                 height: 50px;
-                border-width: 4px;
-            }
-
-            a {
-                word-wrap: break-word;
+                border-width: 6px;
             }
         }
     </style>
 
-    <!-- JavaScript to handle redirection -->
     <script type="text/javascript">
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        setInterval(() => {
+            countdownElement.textContent = countdown;
+            countdown--;
+            if (countdown < 0) {
+                clearInterval(this);
+            }
+        }, 1000);
+
         setTimeout(function () {
             window.location.href = 'https://2ly.link/20H2e';
         }, 5000);
 
-        // Optional: manual redirect with button disable
         function manualRedirect() {
             const button = document.querySelector('.redirect-btn');
             button.disabled = true;
@@ -198,14 +211,12 @@
         <p>
             <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>
         </p>
-        <p>in 3 seconds.</p>
+        <p>in <span id="countdown">5</span> seconds.</p>
         <p>If you are not redirected, click the link above or use the button below.</p>
         <div class="spinner" role="status" aria-live="polite" aria-label="Loading..."></div>
 
-        <!-- Progress bar -->
         <div class="progress-bar"></div>
 
-        <!-- Manual Redirect Button -->
         <button class="redirect-btn" onclick="manualRedirect()">Redirect Now</button>
     </main>
 </body>
