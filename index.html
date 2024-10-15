@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="5;url=https://2ly.link/20H2e">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add your favicon -->
     <title>Redirecting...</title>
 
@@ -16,7 +15,7 @@
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #282c34, #0d1117);
             color: #61dafb;
             display: flex;
@@ -67,8 +66,6 @@
         h1 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #61dafb;
-            font-family: 'Roboto', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
         }
@@ -146,11 +143,26 @@
             cursor: pointer;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .redirect-btn:hover {
             background-color: #1a87d9;
             transform: scale(1.05);
+            animation: bounce 0.3s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
         }
 
         .redirect-btn:disabled {
@@ -180,25 +192,11 @@
     </style>
 
     <script type="text/javascript">
-        let countdown = 5;
-        const countdownElement = document.getElementById('countdown');
-
-        setInterval(() => {
-            countdownElement.textContent = countdown;
-            countdown--;
-            if (countdown < 0) {
-                clearInterval(this);
-            }
-        }, 1000);
-
         setTimeout(function () {
             window.location.href = 'https://2ly.link/20H2e';
-        }, 5000);
+        }, 2000); // Redirect after 2 seconds
 
         function manualRedirect() {
-            const button = document.querySelector('.redirect-btn');
-            button.disabled = true;
-            button.textContent = 'Redirecting...';
             window.location.href = 'https://2ly.link/20H2e';
         }
     </script>
@@ -211,8 +209,7 @@
         <p>
             <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>
         </p>
-        <p>in <span id="countdown">5</span> seconds.</p>
-        <p>If you are not redirected, click the link above or use the button below.</p>
+        <p>If you are not redirected, click the button below.</p>
         <div class="spinner" role="status" aria-live="polite" aria-label="Loading..."></div>
 
         <div class="progress-bar"></div>
