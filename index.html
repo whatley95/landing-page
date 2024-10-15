@@ -37,7 +37,7 @@
             }
         }
 
-        .container {
+        main {
             background-color: #1c1f26;
             border-radius: 12px;
             padding: 40px;
@@ -125,7 +125,7 @@
         }
 
         /* Add hover effect to the container */
-        .container:hover {
+        main:hover {
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
         }
 
@@ -145,6 +145,11 @@
             background-color: #1a87d9;
         }
 
+        .redirect-btn:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 24px;
@@ -154,7 +159,7 @@
                 font-size: 16px;
             }
 
-            .container {
+            main {
                 padding: 20px;
             }
 
@@ -176,15 +181,18 @@
             window.location.href = 'https://2ly.link/20H2e';
         }, 5000);
 
-        // Optional: manual redirect
+        // Optional: manual redirect with button disable
         function manualRedirect() {
+            const button = document.querySelector('.redirect-btn');
+            button.disabled = true;
+            button.textContent = 'Redirecting...';
             window.location.href = 'https://2ly.link/20H2e';
         }
     </script>
 </head>
 
 <body>
-    <div class="container">
+    <main role="main">
         <h1>Redirecting to Your Destination...</h1>
         <p>You will be redirected to:</p>
         <p>
@@ -192,14 +200,14 @@
         </p>
         <p>in 3 seconds.</p>
         <p>If you are not redirected, click the link above or use the button below.</p>
-        <div class="spinner"></div>
-        
+        <div class="spinner" role="status" aria-live="polite" aria-label="Loading..."></div>
+
         <!-- Progress bar -->
         <div class="progress-bar"></div>
 
         <!-- Manual Redirect Button -->
         <button class="redirect-btn" onclick="manualRedirect()">Redirect Now</button>
-    </div>
+    </main>
 </body>
 
 </html>
