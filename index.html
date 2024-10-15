@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://2ly.link/20H2e">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Add your favicon -->
     <title>Redirecting...</title>
 
@@ -15,61 +16,94 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif; /* Material Design font */
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text for readability */
+            font-family: 'Courier New', Courier, monospace;
+            background: linear-gradient(135deg, #282c34, #0d1117);
+            color: #fbc02d; /* Yellow for all text */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
-            position: relative;
+            padding: 20px;
             overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
         }
 
-        .container {
-            background-color: #1e1e1e; /* Dark container */
-            border-radius: 8px; /* Rounded corners */
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-            max-width: 400px; /* Width constraint */
-            width: 100%;
-            animation: fadeIn 0.5s ease-in-out;
-            position: relative;
-            z-index: 1; /* Bring the container above the background */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(135deg, #282c34, #0d1117);
             }
+
+            50% {
+                background: linear-gradient(135deg, #0d1117, #21252b);
+            }
+
+            100% {
+                background: linear-gradient(135deg, #21252b, #0d1117);
+            }
+        }
+
+        main {
+            background-color: rgba(28, 31, 38, 0.9);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+            max-width: 600px;
+            width: 100%;
+            color: #fbc02d; /* Yellow for all text */
+            animation: slideUp 1s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
             to {
-                opacity: 1;
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 36px;
             margin-bottom: 20px;
-            color: #00b0ff; /* Slightly less bright blue */
+            font-family: 'Roboto', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
         }
 
         p {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 15px;
-            line-height: 1.5;
-            color: #b0bec5; /* Light gray for softer text */
+            line-height: 1.6;
+        }
+
+        a {
+            color: #fbc02d; /* Yellow for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            word-break: break-all;
+        }
+
+        a:hover {
+            color: #e0a800; /* Slightly darker yellow on hover */
         }
 
         .spinner {
             margin: 20px auto;
-            width: 40px;
-            height: 40px;
-            border: 5px solid rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            border: 8px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            border-top: 5px solid #00b0ff; /* Spinner color */
+            border-top: 8px solid #fbc02d; /* Yellow spinner */
             animation: spin 1s linear infinite;
         }
 
@@ -77,99 +111,118 @@
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
 
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #fbc02d; /* Yellow progress bar */
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        main:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+            transform: scale(1.02);
+        }
+
         .redirect-btn {
-            background-color: #00b0ff; /* Slightly less bright blue button */
-            color: #ffffff; /* White text */
-            padding: 12px 20px;
+            background-color: #21a1f1; /* Blue button */
+            color: #fff; /* White text on button */
+            padding: 10px 20px;
             border: none;
-            border-radius: 4px; /* Rounded corners */
+            border-radius: 5px;
             cursor: pointer;
             margin-top: 20px;
-            font-size: 16px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .redirect-btn:hover {
-            background-color: #0081cb; /* Darker shade on hover */
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background-color: #1a87d9; /* Darker blue on hover */
+            transform: scale(1.05);
         }
 
-        /* Floating letters */
-        .floating-letter {
-            position: absolute;
-            font-size: 4rem; /* Large text size */
-            font-weight: bold;
-            color: rgba(0, 176, 255, 0.1); /* Soft cyan color */
-            white-space: nowrap;
-            opacity: 0.1; /* Very light text */
-            animation: float 10s ease-in-out infinite; /* Infinite floating animation */
+        .redirect-btn:disabled {
+            background-color: #888;
+            cursor: not-allowed;
         }
 
-        @keyframes float {
-            0% {
-                transform: translate(0, 0);
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
             }
-            25% {
-                transform: translate(100px, 50px);
+
+            p {
+                font-size: 16px;
             }
-            50% {
-                transform: translate(-50px, 100px);
+
+            main {
+                padding: 20px;
             }
-            75% {
-                transform: translate(50px, -100px);
-            }
-            100% {
-                transform: translate(0, 0);
+
+            .spinner {
+                width: 50px;
+                height: 50px;
+                border-width: 6px;
             }
         }
     </style>
 
     <script type="text/javascript">
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        setInterval(() => {
+            countdownElement.textContent = countdown;
+            countdown--;
+            if (countdown < 0) {
+                clearInterval(this);
+            }
+        }, 1000);
+
         setTimeout(function () {
             window.location.href = 'https://2ly.link/20H2e';
-        }, 2000); // Redirect after 2 seconds
+        }, 5000);
 
         function manualRedirect() {
+            const button = document.querySelector('.redirect-btn');
+            button.disabled = true;
+            button.textContent = 'Redirecting...';
             window.location.href = 'https://2ly.link/20H2e';
         }
-
-        // Function to create floating letters
-        function createFloatingLetters() {
-            const text = "WHATLEY";
-            for (let i = 0; i < text.length; i++) {
-                const letter = document.createElement('div');
-                letter.className = 'floating-letter';
-                letter.textContent = text[i];
-                letter.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-                letter.style.top = Math.random() * 100 + 'vh'; // Random vertical position
-                letter.style.animationDuration = Math.random() * 5 + 5 + 's'; // Random duration between 5s and 10s
-                letter.style.opacity = Math.random() * 0.2 + 0.1; // Random opacity
-                document.body.appendChild(letter);
-            }
-        }
-
-        createFloatingLetters(); // Call the function to create floating letters
     </script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Redirecting...</h1>
+    <main role="main">
+        <h1>Redirecting to Your Destination...</h1>
         <p>You will be redirected to:</p>
         <p>
-            <strong>https://whatley95.github.io/dev-profile/</strong>
+            <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a>
         </p>
-        <p>If you are not redirected, click the button below.</p>
+        <p>in <span id="countdown">5</span> seconds.</p>
+        <p>If you are not redirected, click the link above or use the button below.</p>
         <div class="spinner" role="status" aria-live="polite" aria-label="Loading..."></div>
+
+        <div class="progress-bar"></div>
+
         <button class="redirect-btn" onclick="manualRedirect()">Redirect Now</button>
-    </div>
+    </main>
 </body>
 
 </html>
