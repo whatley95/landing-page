@@ -80,15 +80,25 @@
             }
         }
 
-        .code-snippet {
-            background-color: #2b2e3b;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            color: #ffffff;
-            margin-top: 20px;
-            line-height: 1.6;
-            font-family: 'Courier New', Courier, monospace;
+        /* Media query for mobile screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border-width: 4px;
+            }
         }
     </style>
 
@@ -104,9 +114,8 @@
     <div class="container">
         <h1>Redirecting to Your Destination...</h1>
         <p>You will be redirected to 
-            <p>
-                <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a></p> 
-                in 3 seconds.</p>
+            <a href="https://2ly.link/20H2e">https://whatley95.github.io/dev-profile/</a> 
+            in 3 seconds.</p>
         <p>If you are not redirected, click the link above.</p>
         <div class="spinner"></div>
     </div>
